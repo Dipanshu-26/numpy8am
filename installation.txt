@@ -1,0 +1,112 @@
+What is a .ipynb file?
+.ipynb stands for IPython Notebook (now called Jupyter Notebook).
+It allows you to write:
+Python code
+Text (Markdown)
+Equations
+Charts and visualizations
+Outputs in the same document
+Do we need anything besides Python? Yes.
+
+A .ipynb file cannot run with only Python installed. We also need:
+
+            pip install jupyter ipykernel
+
+
+Show students:
+
+Step 1: Create a virtual environment
+           python -m venv venv
+Step 2: Activate it
+            venv\Scripts\activate
+Step 3: Install Jupyter
+            pip install jupyter ipykernel
+Step 4: Register the environment as a kernel
+            python -m ipykernel install --user --name=numpyclass
+Step 5: Open VS Code
+            Install Python Extension
+            Install Jupyter Extension
+            Open a .ipynb file
+            Select kernel numpyclass
+Step 6: Verify the environment
+            import sys
+            print(sys.executable)
+
+Output should show:  ...\venv\Scripts\python.exe
+
+Diagram 
+Python
+   │
+   ├── Virtual Environment (venv)
+   │       │
+   │       ├── NumPy
+   │       ├── Pandas
+   │       ├── Jupyter
+   │       └── ipykernel
+   │
+   └── VS Code
+           │
+           └── .ipynb Notebook
+                    │
+                    └── Uses selected kernel
+One-line Summary
+
+A .ipynb notebook needs a Python interpreter plus Jupyter (jupyter and ipykernel) to execute notebook cells. 
+Python alone cannot open and run notebook files.
+
+
+---------------------------------------------------------------------------------------------------------------------
+
+Create a venv for this project
+
+Since your project is MY-NUMPYPANDAS, create a dedicated venv inside it:
+
+Open Terminal in the project root:
+
+      python -m venv venv
+
+Activate it:
+
+v     env\Scripts\activate
+
+Install packages:
+
+      pip install numpy pandas jupyter ipykernel
+
+Register the kernel:
+
+      python -m ipykernel install --user --name=mynumpypandas
+
+Then in VS Code:
+
+      Ctrl + Shift + P
+      Python: Select Interpreter
+Choose:
+      MY-NUMPYPANDAS\venv\Scripts\python.exe
+
+If you don't see it, click Create Python Environment at the top of the window in your screenshot and choose Venv. VS Code will create a project-specific virtual environment automatically.
+
+For NumPy/Pandas training, I recommend creating a new venv inside MY-NUMPYPANDAS rather than selecting one of the existing venvs from other projects. This keeps dependencies isolated and avoids package conflicts.
+
+
+again if not found
+----------------------
+
+Option 1 (Recommended)
+
+Click: venv  (Manages virtual environments created using 'venv')
+
+VS Code should detect: 
+       D:\mydata\python\my-numpypandas\venv\Scripts\python.exe
+
+Select it.
+
+Option 2 (If VS Code doesn't find it)
+
+Click: Enter Interpreter Path...
+
+Then browse to:
+
+         D:\mydata\python\my-numpypandas\venv\Scripts\python.exe
+
+and select it.
